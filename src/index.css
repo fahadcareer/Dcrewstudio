@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #444444;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #171717;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F7F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B88E4A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #967035;
+}
+
+/* Custom utility for subtle text outline or text transitions if needed */
+.text-underline-animated {
+  position: relative;
+}
+
+.text-underline-animated::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #B88E4A;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.text-underline-animated:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Swiper custom overrides to match luxury theme */
+.swiper-pagination-bullet-active {
+  background: #B88E4A !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #B88E4A !important;
+}
+
+/* Sharp Logo rendering utility to prevent downscaling blurriness */
+.sharp-logo {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
